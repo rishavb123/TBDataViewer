@@ -7,7 +7,7 @@ if __name__ == '__main__':
         "port": 6006,
         "var_name": "total_episodes",
         "run": "minigrid",
-        "format": "json"
+        "format": "csv"
     }
 
     tbdata = TBData(**EXAMPLE)

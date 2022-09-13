@@ -26,7 +26,7 @@ class TBData:
                 self._data = np.array(json.loads(data_bytes))
             elif self._format == "csv":
                 data_str = data_bytes.decode(r.encoding)
-                self._data = list(csv.reader(data_str.split("\r\n")))[1:]
+                self._data = list(csv.reader(data_str.split("\r\n")))[1:-1]
                 self._data = np.array([[float(el) for el in d] for d in self._data])
             else:
                 self._data = str(data_str, "utf-8")
