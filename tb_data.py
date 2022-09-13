@@ -1,11 +1,13 @@
 import csv
 import json
-import requests
-import matplotlib.pyplot as plt
-import numpy as np
 import sys
 
+import matplotlib.pyplot as plt
+import numpy as np
+import requests
+
 from utils import var_to_title
+
 
 class TBData:
 
