@@ -4,6 +4,8 @@ import requests
 import matplotlib.pyplot as plt
 import numpy as np
 
+from utils import var_to_title
+
 class TBData:
 
     def __init__(self, hostname, port, var_name, run, format="json") -> None:
@@ -36,11 +38,14 @@ class TBData:
         self.get_data()
         steps = self._data[:, 1]
         values = self._data[:, 2]
-        plt.plot(steps, values)
+
         plt.xlabel("steps")
         plt.ylabel(self._var_name)
-        title_var_name = self._var_name.replace("_", " ").title()
+        title_var_name = var_to_title(self._var_name)
         plt.title(f"{title_var_name} vs Steps")
+
+        plt.plot(steps, values, label=f"{var_to_title(self._run)} {title_var_name}")
+        plt.legend()
         if show:
             plt.show()
 

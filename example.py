@@ -6,9 +6,14 @@ if __name__ == '__main__':
         "hostname": "http://boq.cc.gt.atl.ga.us",
         "port": 6006,
         "var_name": "total_episodes",
-        "run": "minigrid",
+        "run": "minigrid_expl",
         "format": "json"
     }
 
     tbdata = TBData(**EXAMPLE)
-    tbdata.plot()
+    tbdata.plot(False)
+
+    EXAMPLE["run"] = "minigrid"
+
+    tbdata2 = TBData(**EXAMPLE)
+    tbdata2.plot(True)
