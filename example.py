@@ -14,6 +14,7 @@ if __name__ == '__main__':
     tbdata.plot(False)
 
     EXAMPLE["run"] = "minigrid"
+    EXAMPLE["format"] = "csv"
 
     tbdata2 = TBData(**EXAMPLE)
     tbdata2.plot(True)
