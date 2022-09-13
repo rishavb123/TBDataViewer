@@ -3,6 +3,7 @@ import json
 import requests
 import matplotlib.pyplot as plt
 import numpy as np
+import sys
 
 from utils import var_to_title
 
@@ -22,7 +23,13 @@ class TBData:
 
     def get_data(self):
         if self._data is None:
-            r = requests.get(self._url, allow_redirects=True)
+            try:
+                r = requests.get(self._url, allow_redirects=True)
+            except:
+                print(f"Make sure tensorboard is running on the {self._hostname}:{self._port} and the rest of the parameters are correct.")
+                print("To run tensorboard use the following command:")
+                print("\ttensorboard --logdir {LOGDIR} --bind_all")
+                sys.exit(1)
             data_bytes = r.content
             if self._format == "json":
                 self._data = np.array(json.loads(data_bytes))
