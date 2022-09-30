@@ -2,6 +2,14 @@ from tb_data import TBData
 
 if __name__ == '__main__':
 
+    '''
+    1. Run the following command on BOQ:
+        tensorboard --logdir ~/logdir --bind_all
+    2. Connect to the VPN locally
+    3. Run the script:
+        python example.py
+    '''
+
     EXAMPLE = {
         "hostname": "http://boq.cc.gt.atl.ga.us",
         "port": 6006,
