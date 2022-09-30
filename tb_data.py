@@ -28,7 +28,7 @@ class TBData:
             try:
                 r = requests.get(self._url, allow_redirects=True)
             except:
-                print(f"Make sure tensorboard is running on the {self._hostname}:{self._port} and the rest of the parameters are correct.")
+                print(f"Make sure tensorboard is running on the {self._hostname}:{self._port}, you are connected to the VPN, and the rest of the parameters are correct.")
                 print("To run tensorboard use the following command:")
                 print("\ttensorboard --logdir {LOGDIR} --bind_all")
                 sys.exit(1)
