@@ -10,11 +10,20 @@ if __name__ == '__main__':
         "format": "json"
     }
 
-    tbdata = TBData(**EXAMPLE)
-    tbdata.plot(False)
+    # tbdata = TBData(**EXAMPLE)
+    # tbdata.plot(False)
 
-    EXAMPLE["run"] = "minigrid"
-    EXAMPLE["format"] = "csv"
+    # EXAMPLE["run"] = "minigrid"
+    # EXAMPLE["format"] = "csv"
 
-    tbdata2 = TBData(**EXAMPLE)
-    tbdata2.plot(True)
+    # tbdata2 = TBData(**EXAMPLE)
+    # tbdata2.plot(True)
+
+    EXAMPLE_3 = {
+        **EXAMPLE,
+        "var_name": "eval/final_success/goal_0",
+        "run": "lexa_temporal_walker",
+    }
+
+    tbdata3 = TBData(**EXAMPLE_3)
+    tbdata3.plot(True)
